@@ -47,11 +47,13 @@ Error_tables <- sapply(1: rowNum, function(inx) {
   })
 })
 
+
 dim(Error_tables)
 
 inx <- apply(Error_tables, 2, which.min)
 prediction <- c('0':'9')[inx]
 
+# confusion matrix for prediction and test data
 table(prediction , unlist(all_testing[, 257]))
 
 
